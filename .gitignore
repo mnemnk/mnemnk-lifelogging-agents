@@ -1,0 +1,7 @@
+.DS_Store
+
+# Rust
+/target/
+
+# Mnemnk Local Config
+mnemnk.local.json

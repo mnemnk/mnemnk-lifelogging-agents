@@ -1,0 +1,35 @@
+[package]
+name = "mnemnk-application"
+version = "0.6.0"
+description = "Mnemnk agent for monitoring application usage"
+edition = { workspace = true }
+authors = { workspace = true }
+license = { workspace = true }
+repository = { workspace = true }
+
+[[bin]]
+name = "mnemnk-application"
+path = "src/main.rs"
+test = false
+bench = false
+
+[dependencies]
+anyhow = { workspace = true }
+chrono = { workspace = true }
+clap = { workspace = true }
+env_logger = { workspace = true }
+log = { workspace = true }
+serde = { workspace = true }
+serde_json = { workspace = true }
+tokio = { workspace = true }
+active-win-pos-rs = "0.9.0"
+
+[target.'cfg(target_os = "macos")'.dependencies]
+cocoa = "0.26.0"
+objc = "0.2.7"
+
+[target.'cfg(target_os = "macos")'.build-dependencies]
+bindgen = "0.68.1"
+
+[features]
+cargo-clippy = []
