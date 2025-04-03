@@ -1,91 +1,112 @@
 {
-    "agents": [
-        {
-            "kind": "Command",
-            "name": "mnemnk-api",
-            "title": "API",
-            "description": "API server",
-            "command": {
-                "cmd": "./target/release/mnemnk-api"
-            },
-            "outputs": ["*"],
-            "global_config": {
-                    "address": {
-                        "value": "localhost:3296",
-                        "type": "string",
-                        "title": "Address",
-                        "description": "API server address (host:port)"
-                    },
-                    "api_key": {
-                        "value": null,
-                        "type": "string?",
-                        "title": "API Key",
-                        "description": "API key"
-                    }
-            }
-        },
-        {
-            "kind": "Command",
-            "name": "mnemnk-application",
-            "title": "Application",
-            "description": "application activity",
-            "command": {
-                "cmd": "./target/release/mnemnk-application"
-            },
-            "outputs": ["application"],
-            "default_config": {
-                "interval": {
-                    "value": 10,
-                    "type": "integer",
-                    "title": "Interval",
-                    "description": "Interval in seconds"
-                },
-                "ignore": {
-                    "value": [
-                        "LockApp.exe",
-                        "scrnsave.scr"
-                    ],
-                    "type": "string[]",
-                    "title": "Ignore applications",
-                    "description": "Applications to ignore"
-                }
-            }
-        },
-        {
-            "kind": "Command",
-            "name": "mnemnk-screen",
-            "title": "Screen",
-            "description": "screen capture",
-            "command": {
-                "cmd": "./target/release/mnemnk-screen"
-            },
-            "outputs": ["screen"],
-            "default_config": {
-                "interval": {
-                    "value": 60,
-                    "type": "integer",
-                    "title": "Interval",
-                    "description": "Interval in seconds"
-                },
-                "almost_black_threshold": {
-                    "value": 20,
-                    "type": "integer",
-                    "title": "Almost Black Threshold",
-                    "description": "Each RGB value is considered as black if it is less than this value"
-                },
-                "non_blank_threshold": {
-                    "value": 400,
-                    "type": "integer",
-                    "title": "Non Blank Threshold",
-                    "description": "Number of non-blank pixels to consider the screen as non-blank"
-                },
-                "same_screen_ratio": {
-                    "value": 0.01,
-                    "type": "number",
-                    "title": "Same Screen Threshold",
-                    "description": "Ratio of different pixels to consider the screen as the same"
-                }
-            }
-        }
-    ]
+  "agents": [
+    {
+      "kind": "Command",
+      "name": "mnemnk-api",
+      "title": "API",
+      "description": "API server",
+      "command": {
+        "cmd": "./target/release/mnemnk-api"
+      },
+      "outputs": ["*"],
+      "global_config": [
+        [
+          "address",
+          {
+            "value": "localhost:3296",
+            "type": "string",
+            "title": "Address",
+            "description": "API server address (host:port)"
+          }
+        ],
+        [
+          "api_key",
+          {
+            "value": null,
+            "type": "string?",
+            "title": "API Key",
+            "description": "API key"
+          }
+        ]
+      ]
+    },
+    {
+      "kind": "Command",
+      "name": "mnemnk-application",
+      "title": "Application",
+      "description": "application activity",
+      "command": {
+        "cmd": "./target/release/mnemnk-application"
+      },
+      "outputs": ["application"],
+      "default_config": [
+        [
+          "interval",
+          {
+            "value": 10,
+            "type": "integer",
+            "title": "Interval",
+            "description": "Interval in seconds"
+          }
+        ],
+        [
+          "ignore",
+          {
+            "value": ["LockApp.exe", "scrnsave.scr"],
+            "type": "string[]",
+            "title": "Ignore applications",
+            "description": "Applications to ignore"
+          }
+        ]
+      ]
+    },
+    {
+      "kind": "Command",
+      "name": "mnemnk-screen",
+      "title": "Screen",
+      "description": "screen capture",
+      "command": {
+        "cmd": "./target/release/mnemnk-screen"
+      },
+      "outputs": ["screen"],
+      "default_config": [
+        [
+          "interval",
+          {
+            "value": 60,
+            "type": "integer",
+            "title": "Interval",
+            "description": "Interval in seconds"
+          }
+        ],
+        [
+          "almost_black_threshold",
+          {
+            "value": 20,
+            "type": "integer",
+            "title": "Almost Black Threshold",
+            "description": "Each RGB value is considered as black if it is less than this value"
+          }
+        ],
+        [
+          "non_blank_threshold",
+          {
+            "value": 400,
+            "type": "integer",
+            "title": "Non Blank Threshold",
+            "description": "Number of non-blank pixels to consider the screen as non-blank"
+          }
+        ],
+        [
+          "same_screen_ratio",
+          {
+            "value": 0.01,
+            "type": "number",
+            "title": "Same Screen Threshold",
+            "description": "Ratio of different pixels to consider the screen as the same"
+          }
+        ]
+      ]
+    }
+  ]
 }
