@@ -22,8 +22,8 @@
         [
           "api_key",
           {
-            "value": null,
-            "type": "string?",
+            "value": "",
+            "type": "string",
             "title": "API Key",
             "description": "API key"
           }
@@ -53,7 +53,7 @@
           "ignore",
           {
             "value": ["LockApp.exe", "scrnsave.scr"],
-            "type": "string[]",
+            "type": "text",
             "title": "Ignore applications",
             "description": "Applications to ignore"
           }

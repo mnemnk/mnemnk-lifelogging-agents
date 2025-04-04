@@ -129,7 +129,7 @@ async fn store(
     request: Json<StoreRequest>,
 ) -> Result<Json<Value>, String> {
     if let Some(ref k) = config.api_key {
-        if token != *k {
+        if !k.is_empty() && token != *k {
             return Err("Unauthorized".to_string());
         }
     }
