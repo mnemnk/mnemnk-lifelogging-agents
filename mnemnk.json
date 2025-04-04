@@ -5,6 +5,7 @@
       "name": "mnemnk-api",
       "title": "API",
       "description": "API server",
+      "category": "Core",
       "command": {
         "cmd": "./target/release/mnemnk-api"
       },
@@ -35,6 +36,7 @@
       "name": "mnemnk-application",
       "title": "Application",
       "description": "application activity",
+      "category": "Core",
       "command": {
         "cmd": "./target/release/mnemnk-application"
       },
@@ -65,6 +67,7 @@
       "name": "mnemnk-screen",
       "title": "Screen",
       "description": "screen capture",
+      "category": "Core",
       "command": {
         "cmd": "./target/release/mnemnk-screen"
       },
