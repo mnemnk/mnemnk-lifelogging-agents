@@ -19,14 +19,14 @@ struct AgentConfig {
     interval: u64,
 
     /// Applications to ignore
-    ignore: Vec<String>,
+    ignore: Option<String>,
 }
 
 impl Default for AgentConfig {
     fn default() -> Self {
         Self {
             interval: 10,
-            ignore: Vec::default(),
+            ignore: None,
         }
     }
 }
@@ -36,15 +36,10 @@ impl From<&str> for AgentConfig {
         let mut config = AgentConfig::default();
         if let Value::Object(c) = serde_json::from_str(s).unwrap_or(Value::Null) {
             if let Some(interval) = c.get("interval") {
-                config.interval = interval.as_u64().unwrap();
+                config.interval = interval.as_u64().unwrap_or(10);
             }
             if let Some(ignore) = c.get("ignore") {
-                config.ignore = ignore
-                    .as_array()
-                    .unwrap()
-                    .iter()
-                    .map(|v| v.as_str().unwrap().to_string())
-                    .collect();
+                config.ignore = ignore.as_str().map(|s| s.to_string());
             }
         }
         config
@@ -75,7 +70,16 @@ struct ApplicationAgent {
 impl ApplicationAgent {
     fn new(config: AgentConfig, notify_rx: tokio::sync::mpsc::Receiver<()>) -> Self {
         Self {
-            ignore: config.ignore.iter().cloned().collect(),
+            ignore: config
+                .ignore
+                .as_ref()
+                .map(|s| {
+                    s.split('\n')
+                        .filter(|&s| !s.is_empty())
+                        .map(|s| s.to_string())
+                        .collect()
+                })
+                .unwrap_or_default(),
             config,
             last_event: None,
             notify_rx,
@@ -166,7 +170,7 @@ impl ApplicationAgent {
 
     fn is_ignored(&self, app_event: &Option<ApplicationEvent>) -> bool {
         if let Some(app_event) = app_event {
-            if self.ignore.contains(&app_event.name) {
+            if app_event.name.is_empty() || self.ignore.contains(&app_event.name) {
                 return true;
             }
         }
@@ -181,7 +185,16 @@ impl ApplicationAgent {
                 ".CONFIG" => {
                     let config = AgentConfig::from(args);
                     log::info!("Updated config: {:?}", config);
-                    self.ignore = config.ignore.iter().cloned().collect();
+                    self.ignore = config
+                        .ignore
+                        .as_ref()
+                        .map(|s| {
+                            s.split('\n')
+                                .filter(|&s| !s.is_empty())
+                                .map(|s| s.to_string())
+                                .collect()
+                        })
+                        .unwrap_or_default();
                     self.config = config;
                 }
                 ".QUIT" => {
@@ -260,7 +273,7 @@ fn parse_line(line: &str) -> Option<(&str, &str)> {
 mod macos {
     // based on https://github.com/dimusic/active-window-macos-example
 
-    use cocoa::base::{nil, id};
+    use cocoa::base::{id, nil};
     use cocoa::foundation::NSAutoreleasePool;
     use objc::runtime::{Object, Sel};
     use objc::{class, msg_send, sel, sel_impl};
@@ -300,7 +313,8 @@ mod macos {
         unsafe {
             let pool = cocoa::foundation::NSAutoreleasePool::new(cocoa::base::nil);
             let cls = {
-                let mut decl = objc::declare::ClassDecl::new("AppDelegate", class!(NSObject)).unwrap();
+                let mut decl =
+                    objc::declare::ClassDecl::new("AppDelegate", class!(NSObject)).unwrap();
                 decl.add_method(
                     sel!(applicationDidFinishLaunching:),
                     application_did_finish_launching as extern "C" fn(&mut Object, Sel, id),
@@ -336,8 +350,8 @@ fn main() -> Result<()> {
 
     let runtime = tokio::runtime::Runtime::new()?;
     let agent_handle = std::thread::spawn(move || {
-         let mut agent = ApplicationAgent::new(config, rx);
-         runtime.block_on(async { agent.run().await }).unwrap();
+        let mut agent = ApplicationAgent::new(config, rx);
+        runtime.block_on(async { agent.run().await }).unwrap();
     });
 
     #[cfg(target_os = "macos")]
