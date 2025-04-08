@@ -146,7 +146,7 @@ impl ApplicationAgent {
         if let Some(app_event) = app_event {
             // debug!("check_application: {:?}", app_event);
             let app_event_json = serde_json::to_string(&app_event)?;
-            println!(".OUT {} {}", KIND, app_event_json);
+            println!(".OUT {} {} {}", KIND, KIND, app_event_json);
         }
         Ok(())
     }

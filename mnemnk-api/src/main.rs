@@ -141,7 +141,7 @@ async fn store(
     if request.value.is_null() {
         return Err("Value is null".to_string());
     }
-    println!(".OUT {} {}", request.kind, json_value);
+    println!(".OUT {} {} {}", request.kind, request.kind, json_value);
     Ok(Json(json!({"status": "ok"})))
 }
 
