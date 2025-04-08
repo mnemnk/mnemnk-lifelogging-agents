@@ -146,7 +146,7 @@ impl ScreenAgent {
                 image_id: self.last_image_id.clone().unwrap(),
             };
             let screen_event_json = serde_json::to_string(&screen_event)?;
-            println!(".OUT {} {}", KIND, screen_event_json);
+            println!(".OUT {} {} {}", KIND, KIND, screen_event_json);
 
             return Ok(());
         }
@@ -165,7 +165,7 @@ impl ScreenAgent {
             image_id: image_id.clone(),
         };
         let screen_event_json = serde_json::to_string(&screen_event)?;
-        println!(".OUT {} {}", KIND, screen_event_json);
+        println!(".OUT {} {} {}", KIND, KIND, screen_event_json);
 
         self.last_image_id = Some(image_id);
 
