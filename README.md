@@ -21,11 +21,10 @@
 
 When you launch the Mnemnk App, the settings page will open, prompting you to configure the Mnemnk Directory. After configuration, restart the Mnemnk App, and a directory named `agents` will be created in the Mnemnk Directory.
 
-1. Clone the repo into the `{Mnemnk Diretory}/agents/`
+1. Clone the repo into the `{Mnemnk Directory}/agents/`
 
 ```shell
-cd {Mnemnk Diretory}/agents/
-git clone https://github.com/mnemnk/mnemnk-core-agents.git
+cd {Mnemnk Directory}/agents/
 ```
 
 2. Build
