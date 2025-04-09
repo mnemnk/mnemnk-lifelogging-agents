@@ -39,7 +39,7 @@ Open the Agents page and press the `Agents` button to display the list of agents
 
 4. Import the Flow
 
-Download [logging.json](https://github.com/mnemnk/mnemnk-core-agents/blob/main/logging.json?raw=true) and import it via File > Import on the Agents page.
+Download [logging.json](https://github.com/mnemnk/mnemnk-core-agents/blob/main/logging.json) and import it via File > Import on the Agents page.
 
 <a target="_blank" href="https://github.com/mnemnk/mnemnk-core-agents/blob/main/docs/img/screenshot-core-agents-imported.png?raw=true"><img alt="core agents" width="60%" src="https://github.com/mnemnk/mnemnk-core-agents/blob/main/docs/img/screenshot-core-agents-imported.png?raw=true"></a>
 
