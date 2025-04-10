@@ -19,19 +19,19 @@
 
 0. Install the [Mnemnk App](https://github.com/mnemnk/mnemnk-app).
 
-When you launch the Mnemnk App, the settings page will open, prompting you to configure the Mnemnk Directory. After configuration, restart the Mnemnk App, and a directory named `agents` will be created in the Mnemnk Directory.
+    When you launch the Mnemnk App, the settings page will open, prompting you to configure the Mnemnk Directory. After configuration, restart the Mnemnk App, and a directory named `agents` will be created in the Mnemnk Directory.
 
 1. Clone the repo into the `{Mnemnk Directory}/agents/`
 
-```shell
-cd {Mnemnk Directory}/agents/
-```
+    ```shell
+    cd {Mnemnk Directory}/agents/
+    ```
 
 2. Build
 
-```shell
-cargo build --release
-```
+    ```shell
+    cargo build --release
+    ```
 
 ### Usage
 
