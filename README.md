@@ -47,6 +47,16 @@ Save the flow via File > Save.
 
 Open Home page, and confirm today's date is highlighted. Click it to view the records.
 
+## Acknowledgments
+
+* mnemnk-api
+  * [axum](https://github.com/tokio-rs/axum)
+  * [tower](https://github.com/tower-rs/tower)
+* mnemnk-application
+  * [active-win-pos-rs](https://github.com/dimusic/active-win-pos-rs)
+* mnemnk-screen
+  * [xcap](https://github.com/nashaofu/xcap)
+
 <!----------------------------------------------------------------------------->
 
 [License]: https://github.com/mnemnk/mnemnk-core-agents
