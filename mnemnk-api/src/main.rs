@@ -58,6 +58,7 @@ async fn main() -> Result<()> {
     let mut config: AgentConfig = args.config.as_deref().unwrap_or_default().into();
 
     log::info!("Starting {}.", AGENT_NAME);
+    // log::debug!("Config: {:?}", config);
 
     let c = config.clone();
     tokio::spawn(async move {
@@ -128,6 +129,8 @@ async fn out(
     State(config): State<AgentConfig>,
     request: Json<OutRequest>,
 ) -> Result<Json<Value>, String> {
+    // log::debug!("out: {:?}", request);
+
     if let Some(ref k) = config.api_key {
         if !k.is_empty() && token != *k {
             return Err("Unauthorized".to_string());
@@ -148,7 +151,7 @@ async fn out(
 }
 
 async fn process_line(config: &mut AgentConfig, line: &str) -> Result<()> {
-    log::debug!("process_line: {}", line);
+    // log::debug!("process_line: {}", line);
 
     if let Some((cmd, args)) = parse_line(line) {
         match cmd {
