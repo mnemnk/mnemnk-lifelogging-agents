@@ -33,11 +33,9 @@ cd {Mnemnk Directory}/agents/
 cargo build --release
 ```
 
-3. Restart the Mnemnk App.
+### Usage
 
-Open the Agents page and press the `Agents` button to display the list of agents. Confirm that `API`, `Application`, and `Screen` have been added under Core.
-
-4. Import the Flow
+Open the Agents page in Mnemnk App, and press the `Agents` button to display the list of agents. Confirm that `API`, `Application`, and `Screen` have been added under Core.
 
 Download [logging.json](https://github.com/mnemnk/mnemnk-core-agents/blob/main/logging.json) and import it via File > Import on the Agents page.
 
@@ -47,9 +45,7 @@ The flow will be imported in a stopped state (for security reasons). Press the p
 
 Save the flow via File > Save.
 
-5. Return to Home
-
-Confirm today's date is highlighted. Click it to view the records.
+Open Home page, and confirm today's date is highlighted. Click it to view the records.
 
 <!----------------------------------------------------------------------------->
 
