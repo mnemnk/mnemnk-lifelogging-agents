@@ -81,7 +81,7 @@ async fn main() -> Result<()> {
 
 async fn start_server(config: &AgentConfig) {
     let app = Router::new()
-        .route("/store", post(store).with_state(config.clone()))
+        .route("/out", post(out).with_state(config.clone()))
         .layer((TimeoutLayer::new(Duration::from_secs(2)),));
     let listener = TcpListener::bind(&config.address)
         .await
@@ -117,16 +117,16 @@ async fn shutdown_signal() {
 }
 
 #[derive(Debug, Deserialize, Serialize)]
-struct StoreRequest {
-    agent: String,
+struct OutRequest {
+    ch: String,
     kind: String,
     value: Value,
 }
 
-async fn store(
+async fn out(
     AuthBearer(token): AuthBearer,
     State(config): State<AgentConfig>,
-    request: Json<StoreRequest>,
+    request: Json<OutRequest>,
 ) -> Result<Json<Value>, String> {
     if let Some(ref k) = config.api_key {
         if !k.is_empty() && token != *k {
@@ -134,14 +134,16 @@ async fn store(
         }
     }
     let json_value = serde_json::to_string(&request.value).map_err(|e| e.to_string())?;
-    // TODO: store agent into metadata
+    if request.ch.is_empty() {
+        return Err("Channel is empty".to_string());
+    }
     if request.kind.is_empty() {
         return Err("Kind is empty".to_string());
     }
-    if request.value.is_null() {
-        return Err("Value is null".to_string());
-    }
-    println!(".OUT {} {} {}", request.kind, request.kind, json_value);
+    // if request.value.is_null() {
+    //     return Err("Value is null".to_string());
+    // }
+    println!(".OUT {} {} {}", request.ch, request.kind, json_value);
     Ok(Json(json!({"status": "ok"})))
 }
 
@@ -159,7 +161,6 @@ async fn process_line(config: &mut AgentConfig, line: &str) -> Result<()> {
             }
             ".QUIT" => {
                 log::info!("Quit {}.", AGENT_NAME);
-                // TODO: send message to server
                 std::process::exit(0);
             }
             _ => {
