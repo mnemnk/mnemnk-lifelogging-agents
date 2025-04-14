@@ -118,7 +118,7 @@ async fn shutdown_signal() {
 }
 
 #[derive(Debug, Deserialize, Serialize)]
-struct OutRequest {
+struct OutData {
     ch: String,
     kind: String,
     value: Value,
@@ -127,7 +127,7 @@ struct OutRequest {
 async fn out(
     AuthBearer(token): AuthBearer,
     State(config): State<AgentConfig>,
-    request: Json<OutRequest>,
+    request: Json<OutData>,
 ) -> Result<Json<Value>, String> {
     // log::debug!("out: {:?}", request);
 
@@ -136,17 +136,18 @@ async fn out(
             return Err("Unauthorized".to_string());
         }
     }
-    let json_value = serde_json::to_string(&request.value).map_err(|e| e.to_string())?;
+    // let json_value = serde_json::to_string(&request.value).map_err(|e| e.to_string())?;
     if request.ch.is_empty() {
         return Err("Channel is empty".to_string());
     }
     if request.kind.is_empty() {
         return Err("Kind is empty".to_string());
     }
-    // if request.value.is_null() {
-    //     return Err("Value is null".to_string());
-    // }
-    println!(".OUT {} {} {}", request.ch, request.kind, json_value);
+
+    let json_str = serde_json::to_string(&request.0)
+        .map_err(|e| e.to_string())?;
+
+    println!(".OUT {}", json_str);
     Ok(Json(json!({"status": "ok"})))
 }
 
