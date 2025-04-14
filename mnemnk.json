@@ -54,7 +54,7 @@
         [
           "ignore",
           {
-            "value": ["LockApp.exe", "scrnsave.scr"],
+            "value": "LockApp.exe\nscrnsave.scr\n",
             "type": "text",
             "title": "Ignore applications",
             "description": "Applications to ignore"
