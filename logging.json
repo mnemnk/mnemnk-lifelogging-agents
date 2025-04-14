@@ -1,138 +1,134 @@
 {
   "nodes": [
     {
-      "id": "mnemnk-screen_Ga0vRvKJsA3NImg5Zb7ci",
+      "id": "mnemnk-screen_LlW68VdCgsqpqOFYBxaoS",
       "name": "mnemnk-screen",
       "enabled": true,
       "config": {
-        "interval": 60,
-        "almost_black_threshold": 20,
         "non_blank_threshold": 400,
-        "same_screen_ratio": 0.01
+        "interval": 60,
+        "same_screen_ratio": 0.01,
+        "almost_black_threshold": 20
       },
-      "x": -84.32495708655208,
-      "y": 176.0229386737092
+      "x": 235.55000000000007,
+      "y": 131.0
     },
     {
-      "id": "$database_WGjxUTV-Nhoi7eOw61PTc",
+      "id": "$database_2CPz5Fppvz0iEyfgtjqgP",
       "name": "$database",
       "enabled": true,
       "config": {},
-      "x": 403.16679367097896,
-      "y": 172.57302231450208
+      "x": 680.5500000000001,
+      "y": 132.0
     },
     {
-      "id": "mnemnk-application_dL9SPewftbGKH9xsymdcZ",
+      "id": "mnemnk-application_biwwEtXrwrCWEVEVQc3VG",
       "name": "mnemnk-application",
       "enabled": true,
       "config": {
-        "interval": 10,
-        "ignore": [
-          "LockApp.exe",
-          "scrnsave.scr"
-        ]
+        "ignore": "LockApp.exe\nscrnsave.scr",
+        "interval": 10
       },
-      "x": 746.74147171982,
-      "y": 156.55612193744415
+      "x": 929.5239742252306,
+      "y": 118.01499809071754
     },
     {
-      "id": "$database_4c-pJrQ6gJCaxT5cg6wnW",
+      "id": "$database_5c_pHCx2AtEj4BXfgbESZ",
       "name": "$database",
       "enabled": true,
       "config": {},
-      "x": 1064.3985269345442,
-      "y": 161.69620373703523
+      "x": 1224.739451459469,
+      "y": 118.01499809071754
     },
     {
-      "id": "mnemnk-api_im3rs2rGI6bYEqxuzoAUa",
+      "id": "mnemnk-api_--Q2Ffm2-qt4V2dV0vbdi",
       "name": "mnemnk-api",
       "enabled": true,
       "config": {},
-      "x": 759.1900441872664,
-      "y": 543.3189543881754
+      "x": 931.9795130084708,
+      "y": 503.9264516118411
     },
     {
-      "id": "$database_PfOsqT9LzNvVo-F0CQgER",
+      "id": "$database_gzkMbSqk4P4ZBsl8uwD-i",
       "name": "$database",
       "enabled": true,
       "config": {},
-      "x": 977.1295124899248,
-      "y": 541.262921668339
+      "x": 1230.1883008431453,
+      "y": 501.2874357902954
     },
     {
-      "id": "$board_in__fUCbGETNzLU1mZYuoEAy",
+      "id": "$board_in_58PWIYrdCoe8ulwsVqyQG",
       "name": "$board_in",
       "enabled": true,
       "config": {
         "board_name": "screen"
       },
-      "x": 417.1968410037151,
-      "y": 320.6507096803973
+      "x": 679.2489321455153,
+      "y": 277.2342961005337
     },
     {
-      "id": "$board_in_uda3qC2xxK4bdnOZ1YcIQ",
+      "id": "$board_in_wz3q7xKSSQvc5R_GBMm2b",
       "name": "$board_in",
       "enabled": true,
       "config": {
         "board_name": "application"
       },
-      "x": 1061.3571558754638,
-      "y": 276.7899306989517
+      "x": 1228.326745834098,
+      "y": 233.58375861064633
     },
     {
-      "id": "$board_in_xVN1DJ8lAEBqG_2nI9bgc",
+      "id": "$board_in_ia3XCHuKuZ5utiqyBcRG-",
       "name": "$board_in",
       "enabled": true,
       "config": {
         "board_name": "*"
       },
-      "x": 980.8686307580584,
-      "y": 649.6390980603747
+      "x": 1235.2189359640804,
+      "y": 629.8846910846233
     }
   ],
   "edges": [
     {
-      "id": "xy-edge__mnemnk-screen_Ga0vRvKJsA3NImg5Zb7ciscreen-$database_WGjxUTV-Nhoi7eOw61PTcevent",
-      "source": "mnemnk-screen_Ga0vRvKJsA3NImg5Zb7ci",
+      "id": "xy-edge__mnemnk-screen_LlW68VdCgsqpqOFYBxaoSscreen-$database_2CPz5Fppvz0iEyfgtjqgPevent",
+      "source": "mnemnk-screen_LlW68VdCgsqpqOFYBxaoS",
       "source_handle": "screen",
-      "target": "$database_WGjxUTV-Nhoi7eOw61PTc",
+      "target": "$database_2CPz5Fppvz0iEyfgtjqgP",
       "target_handle": "event"
     },
     {
-      "id": "xy-edge__mnemnk-application_dL9SPewftbGKH9xsymdcZapplication-$database_4c-pJrQ6gJCaxT5cg6wnWevent",
-      "source": "mnemnk-application_dL9SPewftbGKH9xsymdcZ",
+      "id": "xy-edge__mnemnk-application_biwwEtXrwrCWEVEVQc3VGapplication-$database_5c_pHCx2AtEj4BXfgbESZevent",
+      "source": "mnemnk-application_biwwEtXrwrCWEVEVQc3VG",
       "source_handle": "application",
-      "target": "$database_4c-pJrQ6gJCaxT5cg6wnW",
+      "target": "$database_5c_pHCx2AtEj4BXfgbESZ",
       "target_handle": "event"
     },
     {
-      "id": "xy-edge__mnemnk-api_im3rs2rGI6bYEqxuzoAUa*-$database_PfOsqT9LzNvVo-F0CQgERevent",
-      "source": "mnemnk-api_im3rs2rGI6bYEqxuzoAUa",
+      "id": "xy-edge__mnemnk-api_--Q2Ffm2-qt4V2dV0vbdi*-$database_gzkMbSqk4P4ZBsl8uwD-ievent",
+      "source": "mnemnk-api_--Q2Ffm2-qt4V2dV0vbdi",
       "source_handle": "*",
-      "target": "$database_PfOsqT9LzNvVo-F0CQgER",
+      "target": "$database_gzkMbSqk4P4ZBsl8uwD-i",
       "target_handle": "event"
     },
     {
-      "id": "xy-edge__mnemnk-screen_Ga0vRvKJsA3NImg5Zb7ciscreen-$board_in__fUCbGETNzLU1mZYuoEAy*",
-      "source": "mnemnk-screen_Ga0vRvKJsA3NImg5Zb7ci",
+      "id": "xy-edge__mnemnk-screen_LlW68VdCgsqpqOFYBxaoSscreen-$board_in_58PWIYrdCoe8ulwsVqyQG*",
+      "source": "mnemnk-screen_LlW68VdCgsqpqOFYBxaoS",
       "source_handle": "screen",
-      "target": "$board_in__fUCbGETNzLU1mZYuoEAy",
+      "target": "$board_in_58PWIYrdCoe8ulwsVqyQG",
       "target_handle": "*"
     },
     {
-      "id": "xy-edge__mnemnk-application_dL9SPewftbGKH9xsymdcZapplication-$board_in_uda3qC2xxK4bdnOZ1YcIQ*",
-      "source": "mnemnk-application_dL9SPewftbGKH9xsymdcZ",
+      "id": "xy-edge__mnemnk-application_biwwEtXrwrCWEVEVQc3VGapplication-$board_in_wz3q7xKSSQvc5R_GBMm2b*",
+      "source": "mnemnk-application_biwwEtXrwrCWEVEVQc3VG",
       "source_handle": "application",
-      "target": "$board_in_uda3qC2xxK4bdnOZ1YcIQ",
+      "target": "$board_in_wz3q7xKSSQvc5R_GBMm2b",
       "target_handle": "*"
     },
     {
-      "id": "xy-edge__mnemnk-api_im3rs2rGI6bYEqxuzoAUa*-$board_in_xVN1DJ8lAEBqG_2nI9bgc*",
-      "source": "mnemnk-api_im3rs2rGI6bYEqxuzoAUa",
+      "id": "xy-edge__mnemnk-api_--Q2Ffm2-qt4V2dV0vbdi*-$board_in_ia3XCHuKuZ5utiqyBcRG-*",
+      "source": "mnemnk-api_--Q2Ffm2-qt4V2dV0vbdi",
       "source_handle": "*",
-      "target": "$board_in_xVN1DJ8lAEBqG_2nI9bgc",
+      "target": "$board_in_ia3XCHuKuZ5utiqyBcRG-",
       "target_handle": "*"
     }
-  ],
-  "name": "logging"
+  ]
 }
