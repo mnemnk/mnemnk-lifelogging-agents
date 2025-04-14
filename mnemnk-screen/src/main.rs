@@ -71,14 +71,18 @@ struct Screenshot {
 #[derive(Clone, Debug, PartialEq, serde::Serialize)]
 struct ScreenEvent {
     t: i64,
-    image: String,
+
+    #[serde(skip_serializing_if = "Option::is_none")]
+    image: Option<String>,
+
     image_id: String,
 }
 
-#[derive(Clone, Debug, PartialEq, serde::Serialize)]
-struct SameScreenEvent {
-    t: i64,
-    image_id: String,
+#[derive(Debug, serde::Serialize)]
+struct OutData {
+    ch: String,
+    kind: String,
+    value: ScreenEvent,
 }
 
 struct ScreenAgent {
@@ -141,12 +145,17 @@ impl ScreenAgent {
             log::debug!("Close to last screenshot");
 
             let ts = screenshot.timestamp;
-            let screen_event = SameScreenEvent {
+            let screen_event = ScreenEvent {
                 t: ts.timestamp_millis(),
+                image: None,
                 image_id: self.last_image_id.clone().unwrap(),
             };
-            let screen_event_json = serde_json::to_string(&screen_event)?;
-            println!(".OUT {} {} {}", KIND, KIND, screen_event_json);
+            let out_data = OutData {
+                ch: KIND.to_string(),
+                kind: KIND.to_string(),
+                value: screen_event,
+            };
+            println!(".OUT {}", serde_json::to_string(&out_data)?);
 
             return Ok(());
         }
@@ -161,11 +170,15 @@ impl ScreenAgent {
 
         let screen_event = ScreenEvent {
             t: ts.timestamp_millis(),
-            image,
+            image: Some(image),
             image_id: image_id.clone(),
         };
-        let screen_event_json = serde_json::to_string(&screen_event)?;
-        println!(".OUT {} {} {}", KIND, KIND, screen_event_json);
+        let out_data = OutData {
+            ch: KIND.to_string(),
+            kind: KIND.to_string(),
+            value: screen_event,
+        };
+        println!(".OUT {}", serde_json::to_string(&out_data)?);
 
         self.last_image_id = Some(image_id);
 

@@ -67,6 +67,13 @@ struct ApplicationAgent {
     notify_rx: tokio::sync::mpsc::Receiver<()>,
 }
 
+#[derive(Debug, serde::Serialize)]
+struct OutData {
+    ch: String,
+    kind: String,
+    value: ApplicationEvent,
+}
+
 impl ApplicationAgent {
     fn new(config: AgentConfig, notify_rx: tokio::sync::mpsc::Receiver<()>) -> Self {
         Self {
@@ -145,8 +152,12 @@ impl ApplicationAgent {
 
         if let Some(app_event) = app_event {
             // debug!("check_application: {:?}", app_event);
-            let app_event_json = serde_json::to_string(&app_event)?;
-            println!(".OUT {} {} {}", KIND, KIND, app_event_json);
+            let out_data= OutData {
+                ch: KIND.to_string(),
+                kind: KIND.to_string(),
+                value: app_event,
+            };
+            println!(".OUT {}", serde_json::to_string(&out_data)?);
         }
         Ok(())
     }
