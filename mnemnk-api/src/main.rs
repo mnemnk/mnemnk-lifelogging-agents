@@ -136,7 +136,6 @@ async fn out(
             return Err("Unauthorized".to_string());
         }
     }
-    // let json_value = serde_json::to_string(&request.value).map_err(|e| e.to_string())?;
     if request.ch.is_empty() {
         return Err("Channel is empty".to_string());
     }
