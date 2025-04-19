@@ -25,11 +25,13 @@
 
     ```shell
     cd {Mnemnk Directory}/agents/
+    git clone https://github.com/mnemnk/mnemnk-lifelogging-agents.git
     ```
 
 2. Build
 
     ```shell
+    cd mnemnk-lifelogging-agents
     cargo build --release
     ```
 
