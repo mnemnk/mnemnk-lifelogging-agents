@@ -20,4 +20,4 @@ tokio = { version = "1", features = ["full"] }
 edition = "2021"
 authors = ["Akira Ishino <akira@lumilab.jp>"]
 license = "Apache-2.0 OR MIT"
-repository = "https://github.com/mnemnk/mnemnk-core-agents"
+repository = "https://github.com/mnemnk/mnemnk-lifelogging-agents"
