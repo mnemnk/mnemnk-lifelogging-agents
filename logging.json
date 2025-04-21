@@ -5,56 +5,24 @@
       "name": "mnemnk-screen",
       "enabled": true,
       "config": {
-        "non_blank_threshold": 400,
         "interval": 60,
-        "same_screen_ratio": 0.01,
-        "almost_black_threshold": 20
+        "almost_black_threshold": 20,
+        "non_blank_threshold": 400,
+        "same_screen_ratio": 0.01
       },
       "x": 235.55000000000007,
-      "y": 131.0
-    },
-    {
-      "id": "$database_2CPz5Fppvz0iEyfgtjqgP",
-      "name": "$database",
-      "enabled": true,
-      "config": {},
-      "x": 680.5500000000001,
-      "y": 132.0
+      "y": 131
     },
     {
       "id": "mnemnk-application_biwwEtXrwrCWEVEVQc3VG",
       "name": "mnemnk-application",
       "enabled": true,
       "config": {
-        "ignore": "LockApp.exe\nscrnsave.scr",
-        "interval": 10
+        "interval": 10,
+        "ignore": "LockApp.exe\nscrnsave.scr"
       },
       "x": 929.5239742252306,
       "y": 118.01499809071754
-    },
-    {
-      "id": "$database_5c_pHCx2AtEj4BXfgbESZ",
-      "name": "$database",
-      "enabled": true,
-      "config": {},
-      "x": 1224.739451459469,
-      "y": 118.01499809071754
-    },
-    {
-      "id": "mnemnk-api_--Q2Ffm2-qt4V2dV0vbdi",
-      "name": "mnemnk-api",
-      "enabled": true,
-      "config": {},
-      "x": 931.9795130084708,
-      "y": 503.9264516118411
-    },
-    {
-      "id": "$database_gzkMbSqk4P4ZBsl8uwD-i",
-      "name": "$database",
-      "enabled": true,
-      "config": {},
-      "x": 1230.1883008431453,
-      "y": 501.2874357902954
     },
     {
       "id": "$board_in_58PWIYrdCoe8ulwsVqyQG",
@@ -85,30 +53,41 @@
       },
       "x": 1235.2189359640804,
       "y": 629.8846910846233
+    },
+    {
+      "id": "$event_database_MGjz1SUsJMZwu4oG9c7PT",
+      "name": "$event_database",
+      "enabled": true,
+      "config": {},
+      "x": 682.6822022531845,
+      "y": 130.1999999999999
+    },
+    {
+      "id": "$event_database_aSgQVXQIApD4mda4p7lDr",
+      "name": "$event_database",
+      "enabled": true,
+      "config": {},
+      "x": 1234.6822022531846,
+      "y": 112.19999999999987
+    },
+    {
+      "id": "$event_database_ao8RWfDFeiGvpwSWnaFVl",
+      "name": "$event_database",
+      "enabled": true,
+      "config": {},
+      "x": 1242.6822022531846,
+      "y": 504.19999999999993
+    },
+    {
+      "id": "$api_BVexO_FQxBTJrvvMXtmWs",
+      "name": "$api",
+      "enabled": true,
+      "config": {},
+      "x": 975.869434002988,
+      "y": 503.314100057549
     }
   ],
   "edges": [
-    {
-      "id": "xy-edge__mnemnk-screen_LlW68VdCgsqpqOFYBxaoSscreen-$database_2CPz5Fppvz0iEyfgtjqgPevent",
-      "source": "mnemnk-screen_LlW68VdCgsqpqOFYBxaoS",
-      "source_handle": "screen",
-      "target": "$database_2CPz5Fppvz0iEyfgtjqgP",
-      "target_handle": "event"
-    },
-    {
-      "id": "xy-edge__mnemnk-application_biwwEtXrwrCWEVEVQc3VGapplication-$database_5c_pHCx2AtEj4BXfgbESZevent",
-      "source": "mnemnk-application_biwwEtXrwrCWEVEVQc3VG",
-      "source_handle": "application",
-      "target": "$database_5c_pHCx2AtEj4BXfgbESZ",
-      "target_handle": "event"
-    },
-    {
-      "id": "xy-edge__mnemnk-api_--Q2Ffm2-qt4V2dV0vbdi*-$database_gzkMbSqk4P4ZBsl8uwD-ievent",
-      "source": "mnemnk-api_--Q2Ffm2-qt4V2dV0vbdi",
-      "source_handle": "*",
-      "target": "$database_gzkMbSqk4P4ZBsl8uwD-i",
-      "target_handle": "event"
-    },
     {
       "id": "xy-edge__mnemnk-screen_LlW68VdCgsqpqOFYBxaoSscreen-$board_in_58PWIYrdCoe8ulwsVqyQG*",
       "source": "mnemnk-screen_LlW68VdCgsqpqOFYBxaoS",
@@ -124,11 +103,33 @@
       "target_handle": "*"
     },
     {
-      "id": "xy-edge__mnemnk-api_--Q2Ffm2-qt4V2dV0vbdi*-$board_in_ia3XCHuKuZ5utiqyBcRG-*",
-      "source": "mnemnk-api_--Q2Ffm2-qt4V2dV0vbdi",
+      "id": "xy-edge__mnemnk-screen_LlW68VdCgsqpqOFYBxaoSscreen-$event_database_MGjz1SUsJMZwu4oG9c7PTevent",
+      "source": "mnemnk-screen_LlW68VdCgsqpqOFYBxaoS",
+      "source_handle": "screen",
+      "target": "$event_database_MGjz1SUsJMZwu4oG9c7PT",
+      "target_handle": "event"
+    },
+    {
+      "id": "xy-edge__mnemnk-application_biwwEtXrwrCWEVEVQc3VGapplication-$event_database_aSgQVXQIApD4mda4p7lDrevent",
+      "source": "mnemnk-application_biwwEtXrwrCWEVEVQc3VG",
+      "source_handle": "application",
+      "target": "$event_database_aSgQVXQIApD4mda4p7lDr",
+      "target_handle": "event"
+    },
+    {
+      "id": "xy-edge__$api_BVexO_FQxBTJrvvMXtmWs*-$event_database_ao8RWfDFeiGvpwSWnaFVlevent",
+      "source": "$api_BVexO_FQxBTJrvvMXtmWs",
+      "source_handle": "*",
+      "target": "$event_database_ao8RWfDFeiGvpwSWnaFVl",
+      "target_handle": "event"
+    },
+    {
+      "id": "xy-edge__$api_BVexO_FQxBTJrvvMXtmWs*-$board_in_ia3XCHuKuZ5utiqyBcRG-*",
+      "source": "$api_BVexO_FQxBTJrvvMXtmWs",
       "source_handle": "*",
       "target": "$board_in_ia3XCHuKuZ5utiqyBcRG-",
       "target_handle": "*"
     }
-  ]
+  ],
+  "name": "logging"
 }

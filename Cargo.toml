@@ -1,6 +1,5 @@
 [workspace]
 members = [
-    "mnemnk-api",
     "mnemnk-application",
     "mnemnk-screen",
 ]
