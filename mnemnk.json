@@ -2,37 +2,6 @@
   "agents": [
     {
       "kind": "Command",
-      "name": "mnemnk-api",
-      "title": "API",
-      "description": "API server",
-      "category": "Lifelogging",
-      "command": {
-        "cmd": "./target/release/mnemnk-api"
-      },
-      "outputs": ["*"],
-      "global_config": [
-        [
-          "address",
-          {
-            "value": "localhost:3296",
-            "type": "string",
-            "title": "Address",
-            "description": "API server address (host:port)"
-          }
-        ],
-        [
-          "api_key",
-          {
-            "value": "",
-            "type": "string",
-            "title": "API Key",
-            "description": "API key"
-          }
-        ]
-      ]
-    },
-    {
-      "kind": "Command",
       "name": "mnemnk-application",
       "title": "Application",
       "description": "application activity",
