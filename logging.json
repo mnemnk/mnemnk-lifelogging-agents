@@ -1,7 +1,68 @@
 {
   "nodes": [
     {
-      "id": "mnemnk-screen_LlW68VdCgsqpqOFYBxaoS",
+      "id": "$api_IunRSFT1qkIb1RhD6v8Wd",
+      "name": "$api",
+      "enabled": true,
+      "config": {},
+      "title": null,
+      "x": 266.30000000000007,
+      "y": 145.6
+    },
+    {
+      "id": "$board_in_XGGnjUOQTc_In4PjhcaIk",
+      "name": "$board_in",
+      "enabled": true,
+      "config": {
+        "$board": "*"
+      },
+      "title": null,
+      "x": 511.5565082250149,
+      "y": 283.1947934199881
+    },
+    {
+      "id": "$event_database__Lif_9XdMX8DWKz-xBPoL",
+      "name": "$event_database",
+      "enabled": true,
+      "config": {},
+      "title": null,
+      "x": 513.1921901299824,
+      "y": 147.89739670999407
+    },
+    {
+      "id": "mnemnk-application__C6mcBHT_uV6jAmhEu2Tc",
+      "name": "mnemnk-application",
+      "enabled": true,
+      "config": {
+        "interval": 10,
+        "ignore": "LockApp.exe\nscrnsave.scr\n"
+      },
+      "title": null,
+      "x": 820.5909530290427,
+      "y": 152.17031389875578
+    },
+    {
+      "id": "$board_in_CG6k-Jukp--UvV8NK0oRi",
+      "name": "$board_in",
+      "enabled": true,
+      "config": {
+        "$board": "application"
+      },
+      "title": null,
+      "x": 1127.1884925829074,
+      "y": 311.87224736995734
+    },
+    {
+      "id": "$event_database_71oAnXgm9VVsjE_QSVyQZ",
+      "name": "$event_database",
+      "enabled": true,
+      "config": {},
+      "title": null,
+      "x": 1139.6263911710978,
+      "y": 157.0779159685995
+    },
+    {
+      "id": "mnemnk-screen_6uKpAnjCP383OwhYlzsMI",
       "name": "mnemnk-screen",
       "enabled": true,
       "config": {
@@ -10,126 +71,61 @@
         "non_blank_threshold": 400,
         "same_screen_ratio": 0.01
       },
-      "x": 235.55000000000007,
-      "y": 131
+      "title": null,
+      "x": 1439.5380405964988,
+      "y": 159.77833464239296
     },
     {
-      "id": "mnemnk-application_biwwEtXrwrCWEVEVQc3VG",
-      "name": "mnemnk-application",
-      "enabled": true,
-      "config": {
-        "interval": 10,
-        "ignore": "LockApp.exe\nscrnsave.scr"
-      },
-      "x": 929.5239742252306,
-      "y": 118.01499809071754
-    },
-    {
-      "id": "$board_in_58PWIYrdCoe8ulwsVqyQG",
-      "name": "$board_in",
-      "enabled": true,
-      "config": {
-        "board_name": "screen"
-      },
-      "x": 679.2489321455153,
-      "y": 277.2342961005337
-    },
-    {
-      "id": "$board_in_wz3q7xKSSQvc5R_GBMm2b",
-      "name": "$board_in",
-      "enabled": true,
-      "config": {
-        "board_name": "application"
-      },
-      "x": 1228.326745834098,
-      "y": 233.58375861064633
-    },
-    {
-      "id": "$board_in_ia3XCHuKuZ5utiqyBcRG-",
-      "name": "$board_in",
-      "enabled": true,
-      "config": {
-        "board_name": "*"
-      },
-      "x": 1235.2189359640804,
-      "y": 629.8846910846233
-    },
-    {
-      "id": "$event_database_MGjz1SUsJMZwu4oG9c7PT",
+      "id": "$event_database__bYEx357TViWGhbrWLgYu",
       "name": "$event_database",
       "enabled": true,
       "config": {},
-      "x": 682.6822022531845,
-      "y": 130.1999999999999
-    },
-    {
-      "id": "$event_database_aSgQVXQIApD4mda4p7lDr",
-      "name": "$event_database",
-      "enabled": true,
-      "config": {},
-      "x": 1234.6822022531846,
-      "y": 112.19999999999987
-    },
-    {
-      "id": "$event_database_ao8RWfDFeiGvpwSWnaFVl",
-      "name": "$event_database",
-      "enabled": true,
-      "config": {},
-      "x": 1242.6822022531846,
-      "y": 504.19999999999993
-    },
-    {
-      "id": "$api_BVexO_FQxBTJrvvMXtmWs",
-      "name": "$api",
-      "enabled": true,
-      "config": {},
-      "x": 975.869434002988,
-      "y": 503.314100057549
+      "title": null,
+      "x": 1895.669870522313,
+      "y": 166.84545547692264
     }
   ],
   "edges": [
     {
-      "id": "xy-edge__mnemnk-screen_LlW68VdCgsqpqOFYBxaoSscreen-$board_in_58PWIYrdCoe8ulwsVqyQG*",
-      "source": "mnemnk-screen_LlW68VdCgsqpqOFYBxaoS",
-      "source_handle": "screen",
-      "target": "$board_in_58PWIYrdCoe8ulwsVqyQG",
-      "target_handle": "*"
-    },
-    {
-      "id": "xy-edge__mnemnk-application_biwwEtXrwrCWEVEVQc3VGapplication-$board_in_wz3q7xKSSQvc5R_GBMm2b*",
-      "source": "mnemnk-application_biwwEtXrwrCWEVEVQc3VG",
-      "source_handle": "application",
-      "target": "$board_in_wz3q7xKSSQvc5R_GBMm2b",
-      "target_handle": "*"
-    },
-    {
-      "id": "xy-edge__mnemnk-screen_LlW68VdCgsqpqOFYBxaoSscreen-$event_database_MGjz1SUsJMZwu4oG9c7PTevent",
-      "source": "mnemnk-screen_LlW68VdCgsqpqOFYBxaoS",
-      "source_handle": "screen",
-      "target": "$event_database_MGjz1SUsJMZwu4oG9c7PT",
-      "target_handle": "event"
-    },
-    {
-      "id": "xy-edge__mnemnk-application_biwwEtXrwrCWEVEVQc3VGapplication-$event_database_aSgQVXQIApD4mda4p7lDrevent",
-      "source": "mnemnk-application_biwwEtXrwrCWEVEVQc3VG",
-      "source_handle": "application",
-      "target": "$event_database_aSgQVXQIApD4mda4p7lDr",
-      "target_handle": "event"
-    },
-    {
-      "id": "xy-edge__$api_BVexO_FQxBTJrvvMXtmWs*-$event_database_ao8RWfDFeiGvpwSWnaFVlevent",
-      "source": "$api_BVexO_FQxBTJrvvMXtmWs",
+      "id": "xy-edge__$api_IunRSFT1qkIb1RhD6v8Wd*-$event_database__Lif_9XdMX8DWKz-xBPoLevent",
+      "source": "$api_IunRSFT1qkIb1RhD6v8Wd",
       "source_handle": "*",
-      "target": "$event_database_ao8RWfDFeiGvpwSWnaFVl",
+      "target": "$event_database__Lif_9XdMX8DWKz-xBPoL",
       "target_handle": "event"
     },
     {
-      "id": "xy-edge__$api_BVexO_FQxBTJrvvMXtmWs*-$board_in_ia3XCHuKuZ5utiqyBcRG-*",
-      "source": "$api_BVexO_FQxBTJrvvMXtmWs",
+      "id": "xy-edge__$api_IunRSFT1qkIb1RhD6v8Wd*-$board_in_XGGnjUOQTc_In4PjhcaIk*",
+      "source": "$api_IunRSFT1qkIb1RhD6v8Wd",
       "source_handle": "*",
-      "target": "$board_in_ia3XCHuKuZ5utiqyBcRG-",
+      "target": "$board_in_XGGnjUOQTc_In4PjhcaIk",
       "target_handle": "*"
+    },
+    {
+      "id": "xy-edge__mnemnk-application__C6mcBHT_uV6jAmhEu2Tcapplication-$board_in_CG6k-Jukp--UvV8NK0oRi*",
+      "source": "mnemnk-application__C6mcBHT_uV6jAmhEu2Tc",
+      "source_handle": "application",
+      "target": "$board_in_CG6k-Jukp--UvV8NK0oRi",
+      "target_handle": "*"
+    },
+    {
+      "id": "xy-edge__mnemnk-application__C6mcBHT_uV6jAmhEu2Tcapplication-$event_database_71oAnXgm9VVsjE_QSVyQZevent",
+      "source": "mnemnk-application__C6mcBHT_uV6jAmhEu2Tc",
+      "source_handle": "application",
+      "target": "$event_database_71oAnXgm9VVsjE_QSVyQZ",
+      "target_handle": "event"
+    },
+    {
+      "id": "xy-edge__mnemnk-screen_6uKpAnjCP383OwhYlzsMIscreen-$event_database__bYEx357TViWGhbrWLgYuevent",
+      "source": "mnemnk-screen_6uKpAnjCP383OwhYlzsMI",
+      "source_handle": "screen",
+      "target": "$event_database__bYEx357TViWGhbrWLgYu",
+      "target_handle": "event"
     }
   ],
-  "name": "logging"
+  "name": "logging",
+  "viewport": {
+    "x": 146.0866676673562,
+    "y": 82.33722747317773,
+    "zoom": 0.3789291416275995
+  }
 }
