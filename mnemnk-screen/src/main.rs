@@ -79,13 +79,8 @@ struct ScreenEvent {
 }
 
 #[derive(Debug, serde::Serialize)]
-struct Out {
-    ch: String,
-    data: OutData,
-}
-
-#[derive(Debug, serde::Serialize)]
 struct OutData {
+    ch: String,
     kind: String,
     value: ScreenEvent,
 }
@@ -155,12 +150,10 @@ impl ScreenAgent {
                 image: None,
                 image_id: self.last_image_id.clone().unwrap(),
             };
-            let out_data = Out {
+            let out_data = OutData {
                 ch: KIND.to_string(),
-                data: OutData {
-                    kind: KIND.to_string(),
-                    value: screen_event,
-                },
+                kind: KIND.to_string(),
+                value: screen_event,
             };
             println!(".OUT {}", serde_json::to_string(&out_data)?);
 
@@ -180,12 +173,10 @@ impl ScreenAgent {
             image: Some(image),
             image_id: image_id.clone(),
         };
-        let out_data = Out {
+        let out_data = OutData {
             ch: KIND.to_string(),
-            data: OutData {
-                kind: KIND.to_string(),
-                value: screen_event,
-            },
+            kind: KIND.to_string(),
+            value: screen_event,
         };
         println!(".OUT {}", serde_json::to_string(&out_data)?);
 

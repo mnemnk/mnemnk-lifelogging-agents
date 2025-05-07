@@ -68,13 +68,8 @@ struct ApplicationAgent {
 }
 
 #[derive(Debug, serde::Serialize)]
-struct Out {
-    ch: String,
-    data: OutData,
-}
-
-#[derive(Debug, serde::Serialize)]
 struct OutData {
+    ch: String,
     kind: String,
     value: ApplicationEvent,
 }
@@ -157,12 +152,10 @@ impl ApplicationAgent {
 
         if let Some(app_event) = app_event {
             // debug!("check_application: {:?}", app_event);
-            let out_data= Out {
+            let out_data= OutData {
                 ch: KIND.to_string(),
-                data: OutData {
-                    kind: KIND.to_string(),
-                    value: app_event,
-                },
+                kind: KIND.to_string(),
+                value: app_event,
             };
             println!(".OUT {}", serde_json::to_string(&out_data)?);
         }

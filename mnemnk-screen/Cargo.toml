@@ -1,6 +1,6 @@
 [package]
 name = "mnemnk-screen"
-version = "0.6.0"
+version = "0.5.0"
 description = "Mnemnk agent for capturing screen"
 edition = { workspace = true }
 authors = { workspace = true }
