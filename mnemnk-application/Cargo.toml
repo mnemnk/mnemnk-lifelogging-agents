@@ -1,6 +1,6 @@
 [package]
 name = "mnemnk-application"
-version = "0.6.0"
+version = "0.7.0"
 description = "Mnemnk agent for monitoring application usage"
 edition = { workspace = true }
 authors = { workspace = true }
