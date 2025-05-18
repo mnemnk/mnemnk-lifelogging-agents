@@ -15,6 +15,8 @@ use xcap::Monitor;
 const AGENT_NAME: &str = "mnemnk-screen";
 const KIND: &str = "screen";
 
+const IMAGE_BASE64_PREFIX: &str = "data:image/png;base64,";
+
 #[derive(Debug, serde::Deserialize, serde::Serialize)]
 struct AgentConfig {
     /// Interval in seconds
@@ -291,7 +293,7 @@ fn parse_line(line: &str) -> Option<(&str, &str)> {
 fn rgba_to_base64_png(img: &RgbaImage) -> Result<String> {
     let mut buffer = Cursor::new(Vec::new());
     img.write_to(&mut buffer, ImageFormat::Png)?;
-    Ok(base64::engine::general_purpose::STANDARD.encode(buffer.into_inner()))
+    Ok(format!("{IMAGE_BASE64_PREFIX}{}", base64::engine::general_purpose::STANDARD.encode(buffer.into_inner())))
 }
 
 fn fast_downsample(img: &RgbaImage, scale: u32) -> GrayImage {
